@@ -25,8 +25,8 @@ project/
 │   ├── CompletePage.py                # 마지막 페이지 개체 모음
 │   ├── HomePage.py                    # 첫 페이지 개체 모음
 │   ├── OrderPage.py                   # 주문 후 페이지 개체 모음
-├── .gitignore               # Git 무시 파일 목록
-└── README.md                # 프로젝트 개요 및 사용법
+├── .gitignore                         # Git 무시 파일 목록
+└── README.md                          # 프로젝트 개요 및 사용법
 ```
 
 <br/>
@@ -36,7 +36,6 @@ project/
 - 테스트는 간단한 시나리오만 작성하였습니다.
 - 페이지에서 실제 이용자가 할 만한 시나리오를 예로 들었습니다.
 
-"""
 1. 사이트 진입
 2. 임의 야채 ADD TO CART
 3. 사이트 스크롤 여러 번 진행
@@ -51,4 +50,3 @@ project/
 12. 모두 체크 후 Proceed
 13. Thank You 확인
 14. 끝.
-"""
