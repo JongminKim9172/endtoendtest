@@ -13,23 +13,6 @@ import random
 from Pages.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
-"""
-1. 사이트 진입
-2. 임의 야채 ADD TO CART
-3. 사이트 스크롤 여러 번 진행
-4. 검색 창에 “be” 검색
-5. “Be”를 포함한 물품만 있는지 획인
-6. 그 중 하나 제품 수량 2개 추가
-7. 카트 클릭 후 제대로 담아졌는지 확인
-8. PROCEED TO CHECKOUT
-9. 담은 제품 들이 그대로 있는지 확인
-10. Quantity, Price, Total 확인
-11. Place Order
-12. 모두 체크 후 Proceed
-13. Thank You 확인
-14. 끝.
-"""
-
 class TestEndToEnd(BaseClass):
 
     @pytest.fixture(params=[("Brocolli - 1 Kg", "Cucumber - 1 Kg", "Beetroot - 1 Kg")])
