@@ -7,6 +7,9 @@ def pytest_addoption(parser):
     parser.addoption(
         "--browser_name", action="store", default="chrome"
     )
+    parser.addoption(
+        "--env_name", action="store", default="qa"
+    )
 
 @pytest.fixture(scope="class")
 def setup(request):
@@ -18,7 +21,14 @@ def setup(request):
         pass
     elif browser_name == "IE":
         print("IE driver")
-    driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
+
+    env_name = request.config.getoption("env_name")
+    if env_name == "dev":
+        pass
+    elif env_name == "qa":
+        driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
+    elif env_name == "prod":
+        pass
     driver.maximize_window()
 
     request.cls.driver = driver
@@ -26,7 +36,7 @@ def setup(request):
     driver.close()
 
 # 만약 Test가 Fail이 나온다면 그 장면 캡쳐
-@pytest.mark.hookwrapper
+@pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
     """
         Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
